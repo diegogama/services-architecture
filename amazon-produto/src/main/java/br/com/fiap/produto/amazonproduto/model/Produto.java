@@ -1,22 +1,35 @@
 package br.com.fiap.produto.amazonproduto.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Produto {	
-	
+public class Produto {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-		private String nome;
-	
+
+	private String nome;
+
 	@NotNull
 	private String descricao;
+	
+	private String tag;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "detalhe_id", referencedColumnName = "id")
+	private DetalheProduto detalhe;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "genero_id", referencedColumnName = "id")
+	private GeneroProduto genero;
 
 	public Long getId() {
 		return id;
@@ -42,6 +55,22 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
+	public DetalheProduto getDetalhe() {
+		return detalhe;
+	}
+
+	public void setDetalhe(DetalheProduto detalhe) {
+		this.detalhe = detalhe;
+	}
+
+	public GeneroProduto getGenero() {
+		return genero;
+	}
+
+	public void setGenero(GeneroProduto genero) {
+		this.genero = genero;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -65,6 +94,14 @@ public class Produto {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
 	}
 
 }

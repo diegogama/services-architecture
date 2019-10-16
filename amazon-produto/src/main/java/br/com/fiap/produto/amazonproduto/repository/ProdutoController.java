@@ -1,6 +1,7 @@
 package br.com.fiap.produto.amazonproduto.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -38,14 +39,20 @@ public class ProdutoController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Produto> buscar(@PathVariable Long id) {
-		Produto produto = produtoRepository.getOne(id);
-		
-		if (produto == null) {
-			return ResponseEntity.notFound().build();
-		}
-		
-		return ResponseEntity.ok(produto);
+	public Optional<Produto> buscar(@PathVariable Long id) {
+		Optional<Produto> produto = produtoRepository.findById(id);
+		return produto;
+	}
+	
+	@GetMapping("/obter-por-genero/{genero_id}")
+	public Optional<Produto> buscarPorGenero(@PathVariable Long genero_id) {
+		Optional<Produto> produto = produtoRepository.buscarPorGenero(genero_id);
+		return produto;
+	}
+	
+	@GetMapping("/obter-por-tag/{tag}")
+	public List<Produto> listarPorTag(@PathVariable String tag) {
+		return produtoRepository.buscarTag(tag);
 	}
 	
 	@PutMapping("/{id}")
