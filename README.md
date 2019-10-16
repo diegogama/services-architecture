@@ -1,28 +1,4 @@
 # services-architecture
-Caso Amazon
-
-Produto
-	inserir Produto
-	listar produtos por genero
-	obter detalhes do produto
-	buscar produtos por id
-	listar produtos mais vistos por categoria
-	buscar um produto por palavra-chave
-	 
-Desejo
-	adicionar itens
-	listar desejos
-	
-Pedido
-	 acompanhar os dados do seu pedido;
-	
-Suporte
-	 abrir um chamado técnico de algum problema que está acontecendo;
-
-Frete
-	 calcular o frete de uma compra;
-
-
 
 Caso Amazon
 
@@ -37,3 +13,64 @@ solução baseada em Microserviços.
 * Possibilidade de abrir um chamado técnico de algum problema que está acontecendo;
 * Possibilidade de acompanhar os dados do seu pedido;
 * Possibilidade de calcular o frete de uma compra;
+
+Testes
+Microserviço amazom-produto
+
+listar produto GET
+http://localhost:8080/produto
+
+buscar produto por id GET
+http://localhost:8080/produto/1
+
+Adicionar produto POST
+http://localhost:8080/produto
+Payload:
+{
+        "nome": "Capa Kindle",
+        "descricao": "Capa do Kidle 8",
+        "tag": "leitor",
+        "detalhe": {
+            "id": 1
+        },
+        "genero": {
+            "id": 1
+        }
+}
+
+Alterar produto POST
+http://localhost:8080/produto
+Payload:
+{
+        "id": 1,
+        "nome": "Capa Kindle",
+        "descricao": "Capa do Kidle 8",
+        "tag": "leitor",
+        "detalhe": {
+            "id": 1
+        },
+        "genero": {
+            "id": 1
+        }
+}
+
+Obter produto por genero GET
+http://localhost:8080/produto/obter-por-genero/1
+
+Obter produto por tag
+http://localhost:8080/produto/obter-por-tag/leitor
+
+
+amazon-desejo
+	adicionar itens
+	listar desejos
+	
+amazon-pedido
+	 acompanhar os dados do seu pedido;
+	
+amazon-suporte
+	 abrir um chamado técnico de algum problema que está acontecendo;
+
+amazon-frete
+	 calcular o frete de uma compra;
+
