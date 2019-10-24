@@ -1,4 +1,4 @@
-package br.com.fiap.produto.amazonproduto.repository;
+package br.com.fiap.produto.amazonproduto.contoller;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.produto.amazonproduto.contoller.ProdutoRepository;
 import br.com.fiap.produto.amazonproduto.model.Produto;
+import br.com.fiap.produto.amazonproduto.repository.ProdutoRepository;
 
 
 @RestController

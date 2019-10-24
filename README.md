@@ -62,8 +62,21 @@ http://localhost:8080/produto/obter-por-tag/leitor
 
 
 amazon-desejo
-	adicionar itens
-	listar desejos
+	adicionar itens - POST
+	http://localhost:8080/desejo
+	Payload:
+	{
+        "id_cliente": "2",
+        "id_produto": "10",
+        "data": "25/10/2019",
+    }
+	
+	listar desejos - GET
+	http://localhost:8080/desejo
+	
+	buscar desejo por id - GET
+	http://localhost:8080/desejo/1
+	
 	
 amazon-pedido
 	 acompanhar os dados do seu pedido;

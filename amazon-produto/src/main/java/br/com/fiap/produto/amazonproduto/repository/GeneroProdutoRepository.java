@@ -1,4 +1,4 @@
-package br.com.fiap.produto.amazonproduto.contoller;
+package br.com.fiap.produto.amazonproduto.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

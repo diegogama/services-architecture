@@ -1,4 +1,4 @@
-package br.com.fiap.produto.amazonproduto.contoller;
+package br.com.fiap.produto.amazonproduto.repository;
 
 import java.util.List;
 import java.util.Optional;
