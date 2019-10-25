@@ -62,7 +62,8 @@ http://localhost:8080/produto/obter-por-tag/leitor
 
 
 amazon-desejo
-	adicionar itens - POST
+
+adicionar itens - POST
 	http://localhost:8080/desejo
 	Payload:
 	{
@@ -71,10 +72,10 @@ amazon-desejo
         "data": "25/10/2019",
     }
 	
-	listar desejos - GET
+listar desejos - GET
 	http://localhost:8080/desejo
 	
-	buscar desejo por id - GET
+buscar desejo por id - GET
 	http://localhost:8080/desejo/1
 	
 	
