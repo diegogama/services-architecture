@@ -72,9 +72,6 @@ adicionar itens - POST
         "data": "25/10/2019",
     }
 	
-listar desejos - GET
-	http://localhost:8080/desejo
-	
 buscar desejo por id - GET
 	http://localhost:8080/desejo/1
 	
