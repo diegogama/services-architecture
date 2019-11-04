@@ -1,13 +1,15 @@
 package br.com.fiap.produto.amazonproduto.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Produto {
@@ -23,12 +25,13 @@ public class Produto {
 	
 	private String tag;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "detalhe_id", referencedColumnName = "id")
 	private DetalheProduto detalhe;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "genero_id", referencedColumnName = "id")
+	@JsonIgnore
 	private GeneroProduto genero;
 
 	public Long getId() {
