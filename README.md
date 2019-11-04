@@ -96,5 +96,11 @@ amazon-suporte
 	 
 
 amazon-frete
-	 calcular o frete de uma compra;
-
+	 calcular o frete de uma compra - POST;
+	http://localhost:8080/frete
+	{
+        	"cep": "06666-666",
+        	"peso": "5 kg"
+	}
+	
+	
