@@ -77,7 +77,8 @@ buscar desejo por id - GET
 	
 	
 amazon-pedido
-	 acompanhar os dados do seu pedido;
+	 acompanhar os dados do seu pedido; buscar por id -GET
+	 http://localhost:8080/pedido/1
 	
 amazon-suporte
 	 abrir um chamado técnico de algum problema que está acontecendo;
