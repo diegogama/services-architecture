@@ -14,7 +14,7 @@ solução baseada em Microserviços.
 * Possibilidade de acompanhar os dados do seu pedido;
 * Possibilidade de calcular o frete de uma compra;
 
-Testes
+
 Microserviço amazom-produto
 
 listar produto GET
