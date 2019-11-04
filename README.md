@@ -81,7 +81,19 @@ amazon-pedido
 	 http://localhost:8080/pedido/1
 	
 amazon-suporte
-	 abrir um chamado técnico de algum problema que está acontecendo;
+	
+	buscar chamado por ID - GET - http://localhost:8080/chamado/1
+	 
+	 abrir um chamado técnico de algum problema que está acontecendo - POST
+	 http://localhost:8080/chamado
+	Payload:
+	{
+        	"descricao": "Erro ao adicionar produto",
+        	"telefone_contato": "(11) 98888-8888)",
+        	"data": "20/11/2019",
+        	"status": "aberto"
+	}
+	 
 
 amazon-frete
 	 calcular o frete de uma compra;
