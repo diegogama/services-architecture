@@ -16,6 +16,9 @@ public class FreteController {
 	@PostMapping
 	public Double calcular(@Valid @RequestBody Frete frete) {
 		Double valor = 5.0;
+		Double vlPeso = 0.190;
+		Double peso = Double.parseDouble(frete.peso);	
+		valor = vlPeso * peso;
 		return valor;
 	}
 	
